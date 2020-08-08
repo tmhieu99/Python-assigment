@@ -1,65 +1,76 @@
-"""
-Class Knight 
-""" 
-
 class Knight:
-    #Init some attributes
-    __knightHP       = 0
-    __knightMaxHP    = 0
-    __knightLv       = 0
+    __knightHp = 0
+    __knightMaxHp = 0
+    __knightLevel = 0
     __knightRingSign = 0
-    __ringSignList   = list()
-    __journeyList    = list()
+    __journeyList = list()
+    __ringSignList = list()
 
-    def __init__(self, knightHP, knightLv, knightRingSign, knightJourneyList):
-        self.__knightHP       = int(knightHP)
-        self.__knightLv       = int(knigthLv)
-        self.__knightMaxHP    = int(knightHP)
+    def __init__(self, knightHP, knightLevel, knightRingSign, knightJourneyList):
+        self.__knightHp = int(knightHP)
+        self.__knightMaxHp = int(knightHP)
+        self.__knightLevel = int(knightLevel)
         self.__knightRingSign = knightRingSign
-        self.__ringSignList   = [int(knightRingSign)]
-        self.__journeyList    = knightJourneyList
+        self.__ringSignList = [int(knightRingSign)]
+        self.__journeyList = knightJourneyList
 
-    #Get set methods for Knight attributes
+    # Define methods for knight HP
     def getKnightHP(self):
-        return self.__knightHP
+        return self.__knightHp
 
-    def setKnightHP(self, newHP):
-        self.__knightHP = newHP
+    def setKnightHp(self, newKnightHp):
+        self.__knightHp = newKnightHp
     
-    def getKnightMaxHP(self):
-        return self.__knightMaxHP
+    # Define methods for knight max hp
+    def getKnightMaxHp(self):
+        return self.__knightMaxHp
 
-    def setKnigthMaxHP(self, newMaxHP):
-        self.__knightMaxHP = newMaxHP
+    def setKnightMaxHp(self, knightBaseHp):
+        self.__knightMaxHp = knightBaseHp
 
-    def getKnightLv(self):
-        return self.__knightLv
+    # Define method for knight level 
+    def getKnightLevel(self):
+        return self.__knightLevel
 
-    def setKnightLv(self, newLv):
-        self.__knightLv = newLv
-
+    def setKnightLevel(self, newKnightLevel):
+        self.__knightLevel = newKnightLevel
+    
+    # Define method for ring sign 
     def getRingSign(self):
         return self.__knightRingSign
 
-    def setRingSign(self, newSign):
-        self.__knightRingSign = newSign
+    def setRingSign(self, newRingSign):
+        self.__knightRingSign = newRingSign
 
-    #List methods for Knight attributes
+    # Define method for journey list 
     def getJourneyList(self):
         return self.__journeyList
     
-    def addJourneyList(self, newJourney):
-        self.__journeyList.append(newJourney)
+    def appendJourneyList(self, journey):
+        self.__journeyList.append(journey)
 
-    def deleteJourneyList(self):
+    def clearJourneyList(self):
         self.__journeyList.clear()
-
-    def getRingSign(self):
-        return self.__knightRingSign
     
-    def addRingSign(self, ringSign):
+    # Define methods for ring sign list
+    def getRingSignList(self):
+        return self.__ringSignList
+    
+    def appendRingSignList(self, ringSign):
         self.__ringSignList.append(ringSign)
 
-    def deleteRingSign(self):
+    def clearRingSignList(self):
         self.__ringSignList.clear()
 
+
+
+        
+    
+
+
+    
+
+        
+        
+
+    

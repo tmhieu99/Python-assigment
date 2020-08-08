@@ -5,7 +5,7 @@ class Event:
     __ringSignO = 0
     __levelO    = 0
 
-    def __init__(self, index, eventCode):
+    def __init__(self, eventCode, index):
         self.__index = index
         #Convert from eventCode string to int 
         self.__eventCode = int(eventCode)
@@ -16,17 +16,11 @@ class Event:
     def getRingSignO(self):
         return self.__ringSignO
 
-    def eventNotExist(self):
-        return (-1,-1,-1)
-
-    def journeyFinished(self):
-        return (0,-1,-1)
-
     def checkEventCode(self):
         if self.__eventCode == 0: 
             return self.journeyFinished()
         elif self.__eventCode == 9 or self.__eventCode < 8 or self.__eventCode > 100 or self.__eventCode in range (80,90):
-            return self.eventNotExist
+            return self.eventNotExist()
         
         # Get event type from event code 
         i = self.__index
@@ -39,7 +33,15 @@ class Event:
         self.__ringSignO = self.__eventCode % 10
 
         # Get event type 
-        event = int(str(self.__eventCode)[0:1])
+        event = int(str(self.__eventCode)[:1])
 
-        return (event, self.__levelO, self.__ringSignO)        
+        return (event, self.__levelO, self.__ringSignO)    
+
+    def eventNotExist(self):
+        print("Event not Exist")
+        return (-1,-1,-1)
+
+    def journeyFinished(self):
+        print("Knight journey finished")
+        return (0,-1,-1)    
 
